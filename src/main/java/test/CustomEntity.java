@@ -1,13 +1,15 @@
 package test;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "custom", schema = "hu", catalog = "")
+@Table(name = "custom", schema = "hu")
 public class CustomEntity {
     private int id;
     private String name;
-
+private Set<OrderEntity>orderEntities=new HashSet<OrderEntity>();
     @Id
     @Column(name = "id")
     public int getId() {
@@ -16,6 +18,14 @@ public class CustomEntity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Set<OrderEntity> getOrderEntities() {
+        return orderEntities;
+    }
+
+    public void setOrderEntities(Set<OrderEntity> orderEntities) {
+        this.orderEntities = orderEntities;
     }
 
     @Basic

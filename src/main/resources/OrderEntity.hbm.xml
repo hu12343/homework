@@ -5,9 +5,12 @@
 <hibernate-mapping>
 
     <class name="test.OrderEntity" table="order" schema="hu">
-        <id name="id" column="id"/>
-        <property name="cid" column="cid"/>
+        <id name="id" column="id">
+        <generator class="native">
+        </generator>
+        </id>
         <property name="price" column="price"/>
         <property name="address" column="address"/>
+        <many-to-one name="customEntity" class="test.CustomEntity" column="cid" />
     </class>
 </hibernate-mapping>

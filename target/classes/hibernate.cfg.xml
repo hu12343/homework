@@ -16,5 +16,9 @@
       <mapping resource="BookEntity.hbm.xml"/>
       <mapping class="test.CustomerEntity"/>
       <mapping resource="CustomerEntity.hbm.xml"/>
+      <mapping class="test.CustomEntity"/>
+      <mapping resource="CustomEntity.hbm.xml"/>
+      <mapping class="test.OrderEntity"/>
+      <mapping resource="OrderEntity.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
