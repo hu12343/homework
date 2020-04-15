@@ -3,7 +3,7 @@ package test;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order", schema = "hu")
+@Table(name = "order", schema = "hu" )
 public class OrderEntity {
     private int id;
     private Double price;

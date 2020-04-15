@@ -20,5 +20,9 @@
       <mapping resource="CustomEntity.hbm.xml"/>
       <mapping class="test.OrderEntity"/>
       <mapping resource="OrderEntity.hbm.xml"/>
+      <mapping class="test.CourseEntity"/>
+      <mapping resource="CourseEntity.hbm.xml"/>
+      <mapping class="test.StudentEntity"/>
+      <mapping resource="StudentEntity.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

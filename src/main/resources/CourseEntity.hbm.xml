@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="test.CourseEntity" table="course" schema="hu">
+        <id name="id" column="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="cname" column="cname"/>
+        <set name="studentEntities" table="s_c" schema="hu">
+            <key column="cid"/>
+            <many-to-many class="test.StudentEntity" column="sid"/>
+        </set>
+    </class>
+</hibernate-mapping>

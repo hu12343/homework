@@ -1,7 +1,9 @@
 import org.hibernate.Session;
 import org.junit.Test;
+import test.CourseEntity;
 import test.CustomEntity;
 import test.OrderEntity;
+import test.StudentEntity;
 import untils.HibernateUtils;
 
 public class TE {
@@ -25,6 +27,31 @@ public class TE {
         session.save(c);
         session.save(orderEntity1);
         session.save(orderEntity2);
+        session.getTransaction().commit();
+        session.close();
+
+    }
+    @Test
+    public void test2()
+    {
+       Session session=HibernateUtils.getSession();
+       session.beginTransaction();
+        StudentEntity studentEntity1=new StudentEntity();
+        studentEntity1.setSname("李四");
+        StudentEntity studentEntity2=new StudentEntity();
+        studentEntity2.setSname("王五");
+        CourseEntity courseEntity1=new CourseEntity();
+        courseEntity1.setCname("java");
+        CourseEntity courseEntity2=new CourseEntity();
+        courseEntity2.setCname("python");
+        studentEntity1.getCourseEntities().add(courseEntity1);
+        studentEntity2.getCourseEntities().add(courseEntity1);
+        studentEntity1.getCourseEntities().add(courseEntity2);
+        studentEntity2.getCourseEntities().add(courseEntity2);
+        session.save(courseEntity1);
+        session.save(courseEntity2);
+        session.save(studentEntity1);
+        session.save(studentEntity2);
         session.getTransaction().commit();
         session.close();
 
