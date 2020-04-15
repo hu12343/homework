@@ -34,8 +34,8 @@ public class TE {
     @Test
     public void test2()
     {
-       Session session=HibernateUtils.getSession();
-       session.beginTransaction();
+        Session session=HibernateUtils.getSession();
+        session.beginTransaction();
         StudentEntity studentEntity1=new StudentEntity();
         studentEntity1.setSname("李四");
         StudentEntity studentEntity2=new StudentEntity();
